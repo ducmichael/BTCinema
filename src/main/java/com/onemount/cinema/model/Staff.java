@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Data
@@ -21,13 +24,17 @@ public class Staff {
 
     private int age;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="cinema_id")
-    private Cinema cinema;
+    private String RoleStaffId;
 
-    public Staff(String fullName, String staffCode, int age){
+  
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Staff_id")
+    private List<RoleStaff> RoleStaffList = new ArrayList<>();
+
+    public Staff(String fullName, String staffCode, int age, String RoleStaffId){
         this.fullName = fullName;
         this.staffCode = staffCode;
         this.age = age;
+        
     }
 }
