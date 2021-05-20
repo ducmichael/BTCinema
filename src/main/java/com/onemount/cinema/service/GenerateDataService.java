@@ -33,36 +33,34 @@ public class GenerateDataService {
 
         Film film1 = new Film();
         Film film2 = new Film();
-        Actor actor1 = new Actor("Daniel Radcliffe", 31, "United Kingdom");
-        Actor actor2 = new Actor("Rupert Grint", 32, "United Kingdom");
-        Actor actor3 = new Actor("Emma Watson", 31, "United Kingdom");
-        Actor actor4 = new Actor("Alan Rickman", "United Kingdom");
+        Actor actor1 = new Actor("Park Seo Joon", 31, "Korea");
+        Actor actor2 = new Actor("Ahn Sung Ki", 32, "Korea");
+        Actor actor3 = new Actor("Woo Do Hwan", 31, "Korea");
+        Actor actor4 = new Actor("Choi Woo Sik", "Korea");
         Genre adventure = new Genre("Adventure","");
         Genre comedy = new Genre("Comedy","");
         Genre cartoon = new Genre("Cartoon","");
         Genre fiction = new Genre("Fiction","");
-        Genre fantastic = new Genre("Fantastic","");
+        Genre Action = new Genre("Action","");
         List<Actor> actors1 = new ArrayList<>();
         actors1.add(actor1);
         actors1.add(actor2);
         actors1.add(actor3);
         actors1.add(actor4);
         film1.setActors(actors1);
-        film1.addGenre(adventure);
-        film1.addGenre(fiction);
-        film1.addGenre(fantastic);
-        film1.setDescription("Without the guidance and protection of their professors, Harry (Daniel Radcliffe), Ron (Rupert Grint) and Hermione (Emma Watson) begin a mission to destroy the Horcruxes, the sources of Voldemort's immortality.");
+        film1.addGenre(Action);
+        film1.setDescription("Sau khi bản thân bỗng nhiên sở hữu “Bàn tay diệt quỷ”, võ sĩ MMA Yong Hoo (Park Seo Joon thủ vai) đã dấn thân vào hành trình trừ tà, trục quỷ đối đầu với Giám Mục Bóng Tối (Woo Do Hwan) – tên quỷ Satan đột lốt người. Từ đó sự thật về cái chết của cha Yong Hoo cũng dần được hé lộ cũng như nguyên nhân anh trở thành “người được chọn”.");
         film1.setRunningTime(120);
-        film1.setTitle("Harry Potter and the deathly hallows");
-        film1.setReleaseDate(formatter.parse("10/05/2021"));
+        film1.setTitle("BÀN TAY DIỆT QUỶ");
+        film1.setReleaseDate(formatter.parse("09/04/2021"));
         film1.setStatus(FilmStatus.ON_THEATER);
 
         filmRepository.save(film1);
 
-        Actor actor5 = new Actor("Wasabi Mizuta", "Japan");
-        Actor actor6 = new Actor("Megumi Oohara", "Japan");
-        Actor actor7 = new Actor("Subaru Kimura", "Japan");
-        Actor actor8 = new Actor("Yumi Kakazu", "Japan");
+        Actor actor5 = new Actor("Sung Dong Il", "Korea");
+        Actor actor6 = new Actor("Ha Ji Won,", "Korea");
+        Actor actor7 = new Actor("Kim Hiewon", "Korea");
+        Actor actor8 = new Actor("Park Soi", "Korea");
 
         List<Actor> actors2 = new ArrayList<>();
         actors2.add(actor5);
@@ -71,17 +69,16 @@ public class GenerateDataService {
         actors2.add(actor8);
         film2.setActors(actors2);
         film2.addGenre(comedy);
-        film2.addGenre(cartoon);
-        film2.setDescription("Nobita - following his previous adventure - has managed to change his future for the better, making Shizuka marry him. Taken by despair, however, he decides to return to the past to re-meet his beloved grandmother, she died when he was still in kindergarten and to whom he was really fond of; grandmother is happy that Nobita came back in time to be with her, and confides in him a great desire: to meet his future bride");
+        film2.setDescription("Du-seok (Sung Dong Il) và Jong-bae (Kim Hiewon) là hai gã chuyên đòi nợ thuê có máu mặt. Để uy hiếp một con nợ, cả hai đã bắt Seung-yi (Park Soi) - một bé gái 9 tuổi làm vật thế chấp cho số nợ của mẹ cô bé. Tuy nhiên, mẹ của Seung-yi lại bị trục xuất về nước, và hai ông chú đành nhận trách nhiệm trông chừng Seung-yi đến khi cô bé được một gia đình giàu có nhận nuôi. Khi phát hiện ra Seung-yi nhỏ bé bị bán đi làm công cho một bà chủ vô trách nhiệm, Du-seok đã tìm đến để chuộc lại cô bé. Mặc dù Seung-yi vốn là Du-seok và Jong-bae không hề mong muốn, cô bé dần trở thành cục cưng yêu quý và cả 3 sống bên nhau như một gia đình. (CHIẾU LẠI từ 5/5/21)");
         film2.setRunningTime(150);
-        film2.setTitle("DORAEMON: STAND BY ME 2");
-        film2.setReleaseDate(formatter.parse("05/07/2021"));
+        film2.setTitle("CỤC NỢ HÓA CỤC CƯNG");
+        film2.setReleaseDate(formatter.parse("09/10/2021"));
         film2.setStatus(FilmStatus.INCOMING);
 
         filmRepository.save(film2);
 
-        Cinema cinema1 = new Cinema("CGV Ba Trieu", "40 Ba Trieu, Ha Noi");
-        Cinema cinema2 = new Cinema("CGV Kim Ma", "120 Kim Ma, Ha Noi");
+        Cinema cinema1 = new Cinema("CGV Vincom Mega Mall", "458 Minh Khai, Ha Noi");
+        Cinema cinema2 = new Cinema("CGV Trương Định Plaza", "416 Trương Định, Ha Noi");
         generateCinemaAndEvent(cinema1, film1);
         generateCinemaAndEvent(cinema2, film2);
 
